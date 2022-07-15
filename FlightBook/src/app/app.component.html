@@ -29,10 +29,15 @@
   </div>
 
  
-   </nav>
-   
-  
 
+   
+   <form class="card-body-centre" >
+
+    <input type="text" class="form-control" [(ngModel)]="searchTerm"(keyup)="search($event)" placeholder="search ">
+
+
+</form>
+</nav>
 
 <div class="container">
   <router-outlet></router-outlet>

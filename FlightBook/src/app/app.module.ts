@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './services/auth.service';
 import { FlightComponent } from './flight/flight.component';
 import { BookingComponent } from './booking/booking.component';
+import { FilterPipe } from './shared/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BookingComponent } from './booking/booking.component';
     AccountComponent,
     DashboardComponent,
     FlightComponent,
-    BookingComponent
+    BookingComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

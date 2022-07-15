@@ -3,7 +3,7 @@
         <div class="card" style="width: 18rem;">
            
             <div class="card-body">
-                
+                <div class="col-md-4 mb-3" *ngFor="let flight of flights | filter:searchKey:'airline'"></div>
                 <h5 class="card-title">{{flight.flightNo}}</h5>
                 <p class="card-title">{{flight.airline}}</p>
                 <p class="card-text">{{flight.fromPlace}}</p>

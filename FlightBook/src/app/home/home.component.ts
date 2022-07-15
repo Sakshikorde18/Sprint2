@@ -10,15 +10,41 @@ import { FlightService } from '../services/flight.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private _flightservice: FlightService,private _router:Router) { }
+  public flight : any;
+  searchKey:string="";
+  public searchTerm : string='';
+  constructor(private flightservice: FlightService,private _router:Router) { }
 
   flights: Array<flight> = new Array<flight>();
+  
   ngOnInit(): void {
 
-    this._flightservice.getFlights().subscribe(res => this.flights = res, err => console.log(err))
+    this.flightservice.getFlights().subscribe(res => this.flights = res, err => console.log(err))
+    this.flightservice.search.subscribe((val:any)=>
+    {
+      this.searchKey=val;
+  })
+
   }
+  
   goto(){
     this._router.navigate(['/booking']);
   }
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.flightservice.search.next(this.searchTerm);
+  
+  }
+  }
 
-}
+
+
+
+
+
+
+
+
+
+
