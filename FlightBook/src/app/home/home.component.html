@@ -1,0 +1,17 @@
+<div class="row mt-5">
+    <div class="col-md-4 mb-3" *ngFor="let flight of flights">
+        <div class="card" style="width: 18rem;">
+           
+            <div class="card-body">
+                
+                <h5 class="card-title">{{flight.flightNo}}</h5>
+                <p class="card-title">{{flight.airline}}</p>
+                <p class="card-text">{{flight.fromPlace}}</p>
+                <p class="card-text">{{flight.toPlace}}</p>
+                <p class="card-text">{{flight.startDateTime}}</p>
+                <p class="card-text">{{flight.ticketCost}}</p>
+                <td>   <button  (click)="goto()" class="btn btn-primary">Book</button></td>
+            </div>
+        </div>
+    </div>
+</div>
