@@ -17,25 +17,23 @@ export class HomeComponent implements OnInit {
 
   flights: Array<flight> = new Array<flight>();
   
-  ngOnInit(): void {
-
+  ngOnInit(): void 
+  {
     this.flightservice.getFlights().subscribe(res => this.flights = res, err => console.log(err))
-    this.flightservice.search.subscribe((val:any)=>
+     this.flightservice.search.subscribe((val:any)=>
     {
       this.searchKey=val;
-  })
-
+    });
+    this.flightservice.search.subscribe((val:any)=>{
+      this.searchKey = val;
+    })
   }
   
-  goto(){
-    this._router.navigate(['/booking']);
-  }
-  search(event:any){
-    this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
-    this.flightservice.search.next(this.searchTerm);
+      goto()
+     {
+       this._router.navigate(['/booking']);
+     }
   
-  }
   }
 
 

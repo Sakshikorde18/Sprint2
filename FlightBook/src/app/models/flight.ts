@@ -8,8 +8,8 @@ export class flight
     endDateTime:number=0;
     days:string='';
     instrument:string='';
-    businessSeats:number=0;
-    nonBusinessSeats:number=0;
+    businessSeats:string='';
+    nonBusinessSeats:string='';
     ticketCost:number=0;
     rows:number=0;
     meal:string='';

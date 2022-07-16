@@ -1,1 +1,119 @@
-<p>dashboard works!</p>
+
+ <section class="section-intro bg-primary padding-y-lg">
+	<div class="container">
+
+	  <article class="my-5">
+       <p class= "display-4 text-white"> This is Admin page </p> 
+       
+	    
+                <br>
+        <button class="btn btn-primary" class="nav-link" routerLink="/flight" >See Airline</button>
+        <br>
+        
+	  </article>
+
+	</div> <!-- container end.// -->
+</section>
+
+<h1> Add Flight </h1>
+<table>
+    <tr>
+        <td>Flight No</td>
+        <td>
+            <input [(ngModel)]="flightModel.flightNo" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Airline</td>
+        <td>
+            <input [(ngModel)]="flightModel.airline" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Source</td>
+        <td>
+            <input [(ngModel)]="flightModel.fromPlace" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Destination</td>
+        <td>
+            <input [(ngModel)]="flightModel.toPlace" type="text">
+        </td>
+    </tr>
+    
+    <tr>
+        <td>Days</td>
+        <td>
+            <input [(ngModel)]="flightModel.days" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Instruments</td>
+        <td>
+            <input [(ngModel)]="flightModel.instrument" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Business Class Seats</td>
+        <td>
+            <input [(ngModel)]="flightModel.businessSeats" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Non Business Class Seats</td>
+        <td>
+            <input [(ngModel)]="flightModel.nonBusinessSeats" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Ticket Cost</td>
+        <td>
+            <input [(ngModel)]="flightModel.ticketCost" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>No. Of Rows</td>
+        <td>
+            <input [(ngModel)]="flightModel.rows" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>Meal</td>
+        <td>
+            <input [(ngModel)]="flightModel.meal" type="text">
+        </td>
+    </tr>
+    
+    
+    <input type="submit" (click)="Addflight()">
+    <input type="button" (click)="getData()" value="See Airlines"/>
+</table>
+
+
+<table border="5">
+    <tr>
+        <td>Flight No </td>
+        <td>Airline </td>
+        <td>Source</td>
+        <td>Destination</td>
+        <td>Date and Time</td>
+        <td>Ticket Cost</td>
+    </tr>
+    <tr *ngFor="let flight of flightModels">
+        <td> {{flight.flightNo}} </td>
+        <td> {{flight.airline}} </td>
+        <td> {{flight.fromPlace}} </td>
+        <td> {{flight.toPlace}} </td>
+        <td> {{flight.startDateTime}} </td>
+        <td> {{flight.ticketCost}}</td>
+       
+       
+
+            
+
+            <input type="button" value="Edit" (click)="Editflight(flight)" />
+            <input type="button" value="Delete" (click)="Deleteflight(flight)" />
+        
+    </tr>
+</table>

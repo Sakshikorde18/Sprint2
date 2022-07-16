@@ -20,12 +20,7 @@ export class AppComponent {
   ngOnInit(): void { }
 
   
-search(event:any){
-  this.searchTerm = (event.target as HTMLInputElement).value;
-  console.log(this.searchTerm);
-  this.flightservice.search.next(this.searchTerm);
 
-}
   LoggedIn(input:boolean){
     if(input){
       return this._auth.loggedIn();
@@ -36,5 +31,10 @@ search(event:any){
   }
   LogOut(){
     this._auth.logoutUser();
+  }
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.flightservice.search.next(this.searchTerm);
   }
 }

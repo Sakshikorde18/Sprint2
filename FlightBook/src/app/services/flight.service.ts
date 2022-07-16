@@ -11,6 +11,7 @@ export class FlightService {
 
 
     public search = new BehaviorSubject<string>("");
+    
     private _flightUrl = "https://localhost:44354/api/Flight";
     
     constructor(private http: HttpClient, private _router: Router) { }
