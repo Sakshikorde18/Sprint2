@@ -1,4 +1,17 @@
 
+<!DOCTYPE html>
+<html>
+<body>
+<form action="/home">
+  
+  <input type="radio" id="One Way" name="fav_language" value="One Way">
+  <label for="One Way">One Way</label>
+  <input type="radio" id="Round Trip" name="fav_language" value="Round Rrip">
+  <label for="Round Trip">Round Trip</label><br>
+  
+</form></body></html>
+
+
 
 <div class="container">
     <div class="row">
@@ -10,8 +23,8 @@
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.airline}}</p>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.fromPlace}}</p>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.toPlace}}</p>
-                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.startDateTime}}</p>
-                <p><strong>Price:</strong> ${{flight.ticketCost}}</p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Date:{{flight.startDateTime}}</strong></p>
+                <p><strong>Price: ${{flight.ticketCost}}</strong></p>
                 <button class="btn btn-primary" (click)="goto()">Book</button>
                 
             </div>

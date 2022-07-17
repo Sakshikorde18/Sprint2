@@ -32,7 +32,20 @@
       <tr>
         <td>Meal</td>
         <td>
-            <input [(ngModel)]="bookingModel.meal" type="text">
+          
+            <form action [(ngModel)]="bookingModel.meal">
+                <label for="meals">Choose Meal :</label>
+                <select name="meals" id="meals">
+                  <option value="Veg">Veg</option>
+                  <option value="NonVeg">NonVeg</option>
+                  <option value="None">None</option>
+                 
+                </select>
+                <br><br>
+                
+              </form>
+        
+         
         </td>
     </tr> <tr>
       <td>No. of Seats</td>

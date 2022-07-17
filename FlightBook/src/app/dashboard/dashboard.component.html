@@ -6,15 +6,15 @@
        <p class= "display-4 text-white"> This is Admin page </p> 
        
 	    
-                <br>
-        <button class="btn btn-primary" class="nav-link" routerLink="/flight" >See Airline</button>
-        <br>
+               
         
 	  </article>
 
 	</div> <!-- container end.// -->
 </section>
-
+<br>
+<button class="btn btn-primary" class="nav-link" routerLink="/flight" >Customer Booking Details</button>
+<br>
 <h1> Add Flight </h1>
 <table>
     <tr>
@@ -108,12 +108,8 @@
         <td> {{flight.startDateTime}} </td>
         <td> {{flight.ticketCost}}</td>
        
-       
-
-            
-
-            <input type="button" value="Edit" (click)="Editflight(flight)" />
+            <input type="button" value="Update" (click)="Editflight(flight)" />
             <input type="button" value="Delete" (click)="Deleteflight(flight)" />
-        
+           
     </tr>
 </table>

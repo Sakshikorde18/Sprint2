@@ -1,1 +1,21 @@
-<p>flight works!</p>
+<input type="button" (click)="getData()" value="Customer Bookings"/>
+<table border="5">
+    <tr>
+        <td>Name </td>
+        <td>Email Id </td>
+        <td>Passenger Details</td>
+        <td>Meal</td>
+        <td>Seat No</td>
+        
+    </tr>
+    <tr *ngFor="let booking of bookingModels">
+        <td> {{booking.name}} </td>
+        <td> {{booking.email}} </td>
+        <td> {{booking.passengerDetails}} </td>
+        <td> {{booking.meal}} </td>
+        <td> {{booking.seatNo}} </td>
+        
+       
+    </tr>
+</table>
+           
