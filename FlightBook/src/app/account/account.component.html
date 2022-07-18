@@ -1,22 +1,26 @@
- 
+<br> 
         <input type="button" (click)="getData()" value="See Bookings"/>
+        <br><br>
 <table border="5">
     <tr>
-        <td>Name </td>
-        <td>Email Id </td>
-        <td>Passenger Details</td>
-        <td>Meal</td>
-        <td>Seat No</td>
+        <td><b>Name</b> </td>
+        <td><b>Email Id</b> </td>
+        <td><b>Gender</b></td>
+        <td><b>Age</b></td>
+        <td><b>Meal</b></td>
+        <td><b>Seat No</b></td>
+        <td><b>Action</b></td>
         
     </tr>
     <tr *ngFor="let booking of bookingModels">
         <td> {{booking.name}} </td>
         <td> {{booking.email}} </td>
-        <td> {{booking.passengerDetails}} </td>
+        <td> {{booking.gender}} </td>
+        <td> {{booking.age}} </td>
         <td> {{booking.meal}} </td>
         <td> {{booking.seatNo}} </td>
         
         <input type="button" value="Cancel Booking" (click)="Deletebooking(booking)" />
     </tr>
 </table>
-           
+           <br><br><br><br><br><br>

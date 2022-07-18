@@ -8,31 +8,29 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css']
 })
-export class BookingComponent implements OnInit {
+export class BookingComponent  {
 
   constructor(public httpc:HttpClient) { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+ 
 
   bookingModel: booking = new booking();
   bookingModels: Array<booking> = new Array<booking>();
   Addbooking() {
     console.log(this.bookingModel);
-    //this.CustmerModels.push(this.CustomerModel);
-
+    
     var bookingto={
-        
+      id:Number(this.bookingModel.id),  
       name:this.bookingModel.name,
       email:this.bookingModel.email,
-      passengerDetails:this.bookingModel.passengerDetails,
+      gender:this.bookingModel.gender,
+      age:Number(this.bookingModel.age),
       meal:this.bookingModel.meal,
       seatNo:Number(this.bookingModel.seatNo),
 
       
 
     }
-    this.httpc.post("https://localhost:44354/api/Booking",bookingto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
+    this.httpc.post("https://flightbook20220718154132.azurewebsites.net/api/Booking",bookingto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
     this.bookingModel = new booking();
   }
   PostSuccess(res:any){
@@ -51,7 +49,7 @@ export class BookingComponent implements OnInit {
   }
   getBookings(){
     console.log("Hi");
-    this.httpc.get("https://localhost:44354/api/Booking").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
+    this.httpc.get("https://flightbook20220718154132.azurewebsites.net/api/Booking").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
   }
   
   GetSuccess(input:any){

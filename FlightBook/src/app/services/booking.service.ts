@@ -10,7 +10,7 @@ export class BookingService {
 
 
 
-    private _bookingtUrl = "https://localhost:44354/api/Booking";
+    private _bookingtUrl = "https://flightbook20220718154132.azurewebsites.net/api/Booking";
     constructor(private http: HttpClient, private _router: Router) { }
 
 

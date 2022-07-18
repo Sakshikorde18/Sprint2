@@ -34,6 +34,15 @@ export class HomeComponent implements OnInit {
        this._router.navigate(['/booking']);
      }
   
+     goto1()
+     {
+       this._router.navigate(['/search']);
+     }
+     search(event:any){
+      this.searchTerm = (event.target as HTMLInputElement).value;
+      console.log(this.searchTerm);
+      this.flightservice.search.next(this.searchTerm);
+    }
   }
 
 

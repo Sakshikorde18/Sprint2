@@ -15,6 +15,7 @@ import { FlightComponent } from './flight/flight.component';
 import { BookingComponent } from './booking/booking.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { SearchComponent } from './search/search.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SearchComponent } from './search/search.component';
     FlightComponent,
     BookingComponent,
     FilterPipe,
-    SearchComponent
+    SearchComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

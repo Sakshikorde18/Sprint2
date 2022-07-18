@@ -30,9 +30,11 @@ export class DashboardComponent  {
       fromPlace:this.flightModel.fromPlace,
      
       toPlace:this.flightModel.toPlace,
-
+     
+      startDateTime:this.flightModel.startDateTime,
+      
+      endDateTime:this.flightModel.endDateTime,
   
-
       days:this.flightModel.days,
 
       instrument:this.flightModel.instrument,
@@ -46,9 +48,13 @@ export class DashboardComponent  {
       rows:Number(this.flightModel.rows),
       
       meal:this.flightModel.meal,
+
+      logo:this.flightModel.logo,
+
+      isActive:this.flightModel.isActive,
       
     }
-    this.httpc.post("https://localhost:44354/api/flight",flightto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
+    this.httpc.post("https://flightbook20220718154132.azurewebsites.net/api/Flight",flightto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
     this.flightModel = new flight();
     
   }
@@ -68,7 +74,7 @@ export class DashboardComponent  {
   }
   getData(){
     console.log("Hi");
-    this.httpc.get("https://localhost:44354/api/flight").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
+    this.httpc.get("https://flightbook20220718154132.azurewebsites.net/api/Flight").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
   }
   
   GetSuccess(input:any){

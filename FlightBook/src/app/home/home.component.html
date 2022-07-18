@@ -8,21 +8,18 @@
   <label for="One Way">One Way</label>
   <input type="radio" id="Round Trip" name="fav_language" value="Round Rrip">
   <label for="Round Trip">Round Trip</label><br>
-  
-</form></body></html>
-
-
-
-<div class="container">
+<input type="text" class="form-control" [(ngModel)]="searchTerm"(keyup)="search($event)" placeholder="Search Flights by Source">
+ 
+<div class="row mt-5">
     <div class="row">
-        <ng-container *ngFor="let flight of flights | filter:searchKey:'airline'">
+        <ng-container *ngFor="let flight of flights | filter:searchKey:'fromPlace'">
             
             <div class="card col-md-3">
-                
-                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.flightNo}}</h5>
-                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.airline}}</p>
-                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.fromPlace}}</p>
-                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.toPlace}}</p>
+                <img class="card-img-top" src="../../assets/{{flight.logo}}" alt="Card image cap">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Flight No:{{flight.flightNo}}</strong></h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Airline:{{flight.airline}}</strong></p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Departure:{{flight.fromPlace}}</strong></p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Arrival:{{flight.toPlace}}</strong></p>
                 <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Date:{{flight.startDateTime}}</strong></p>
                 <p><strong>Price: ${{flight.ticketCost}}</strong></p>
                 <button class="btn btn-primary" (click)="goto()">Book</button>
