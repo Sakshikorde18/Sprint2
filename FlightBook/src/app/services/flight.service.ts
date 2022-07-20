@@ -20,5 +20,6 @@ export class FlightService {
     getFlights() {
         return this.http.get<any>(this._flightUrl);
     }
+    
 
 }

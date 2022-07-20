@@ -17,5 +17,8 @@ export class BookingService {
     getBookings() {
         return this.http.get<any>(this._bookingtUrl);
     }
+    DeleteBookings(id:any) {
+        return this.http.delete<any>(this._bookingtUrl,id);
+    }
 
 }

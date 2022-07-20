@@ -1,8 +1,17 @@
-<br> 
-        <input type="button" (click)="getData()" value="See Bookings"/>
+<br><br><br><br><br> <br><br>
+        <input type="button" (click)="getData()" value="See Booking Details"/>
         <br><br>
-<table border="5">
+        <section class="intro">
+            <div class="gradient-custom-1 h-100">
+              <div class="mask d-flex align-items-center h-100">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-12">
+                      <div class="table-responsive bg-white">
+                        <table class="table mb-0">
+                          <thead>
     <tr>
+        <td><b>PNR No</b> </td>
         <td><b>Name</b> </td>
         <td><b>Email Id</b> </td>
         <td><b>Gender</b></td>
@@ -13,6 +22,7 @@
         
     </tr>
     <tr *ngFor="let booking of bookingModels">
+        <td> {{booking.id}} </td>
         <td> {{booking.name}} </td>
         <td> {{booking.email}} </td>
         <td> {{booking.gender}} </td>
@@ -22,5 +32,14 @@
         
         <input type="button" value="Cancel Booking" (click)="Deletebooking(booking)" />
     </tr>
+                          </thead>
 </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
            <br><br><br><br><br><br>

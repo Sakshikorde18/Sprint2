@@ -1,5 +1,226 @@
+<br><br><br><br><br><br>
+<button class="btn btn-primary center"  routerLink="/flight" >click here to see Customer Booking Details</button>
+<br><br>
+
+
+<body>
+<div class="row">
+    <div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
+		<div class="panel panel-primary">
+			<div class="panel-heading">&nbsp; &nbsp;&nbsp; &nbsp;   <B><h3>Add Flight Here</h3></B>
+			</div>
+			<div class="panel-body">
+				
+					<div class="form-group">
+						<label for="myName"> &nbsp; &nbsp; Flight No</label>
+						<input id="myName" name="flightNO"class="form-control" [(ngModel)]="flightModel.flightNo" type="text">
+						
+					</div>
+					<div class="form-group">
+						<label for="lastname">&nbsp; &nbsp; Airline</label>
+            <select id="from" name="from" class="form-control departsfrom-select" [(ngModel)]="flightModel.airline" required>
+              <option value="Air India">Air India</option>
+              <option value="SpiceJet">SpiceJet</option>
+              <option value="IndiGo">IndiGo</option>
+              <option value="Air India Express">Air India Express</option>
+              <option value="GoAir">GoAir</option>
+              <option value="AirAsia India">AirAsia India</option>
+              <option value="Vistara">Vistara</option>
+              <option value="Jet AirWays">Jet AirWays</option>
+              <option value="TruJet">TruJet</option>
+              <option value="Fly Big">Fly Big</option>
+      
+            </select>
+						
+					</div>
+					<div class="form-group">
+						<label for="age">&nbsp; &nbsp; Source</label>
+            <select id="from" name="from" class="form-control departsfrom-select" [(ngModel)]="flightModel.fromPlace"
+            required>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Patna">Patna</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Kota">Kota</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+          </select>
+						
+					</div>
+					<div class="form-group">
+						<label for="dob">  &nbsp; &nbsp;Destination</label>
+            <select id="from" name="from" class="form-control departsfrom-select" [(ngModel)]="flightModel.toPlace"
+            required>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Patna">Patna</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Kota">Kota</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Chennai">Chennai</option>
+          </select>
+						
+					</div>
+          <div class="form-group">
+						<label for="dob">  &nbsp; &nbsp;strat time</label>
+                        <input id="myName"name="startDateTime" class="form-control" [(ngModel)]="flightModel.startDateTime" type="text">
+						
+					</div>
+          <div class="form-group">
+						<label for="dob">  &nbsp; &nbsp;end time</label>
+                        <input id="myName" name="endDateTime" class="form-control" [(ngModel)]="flightModel.endDateTime" type="text">
+						
+					</div>
+					
+					
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; Days</label>
+            <select id="from" name="from" class="form-control departsfrom-select" [(ngModel)]="flightModel.days" required>
+              <option value="Monday-Tuesday">Monday-Tuesday</option>
+              <option value="Monday-Wednesday">Monday-Wednesday</option>
+              <option value="Tuesday-Saturday">Tuesday-Saturday</option>
+              <option value="Friday-Sunday">Friday-Sunday</option>
+              <option value="Saturaday-Sunday">Saturaday-Sunday</option>
+              <option value="Thursday-Saturday">Thursday-Saturday</option>
+              <option value="Wednesday-Thursday">Wednesday-Thursday</option>
+              <option value="Friday-Monday">Friday-Monday</option>
+            </select>
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; Instruments</label>
+						<select id="from" name="from" class="form-control departsfrom-select" [(ngModel)]="flightModel.instrument"
+        required>
+        <option value="A320">A320</option>
+        <option value="A320 neo">A320 neo</option>
+
+      </select>
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; BusinessSeats</label>
+						<input id="myName" class="form-control" name="BusinessSeats" [(ngModel)]="flightModel.businessSeats" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; NonBusinessSeats</label>
+						<input id="myName"  class="form-control" name="nonBusinessSeats"  [(ngModel)]="flightModel.nonBusinessSeats" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; ticketCost</label>
+                        <input id="myName" class="form-control" name="ticketCost" [(ngModel)]="flightModel.ticketCost" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; No of Rows</label>
+						<input id="myName" class="form-control" name="rows" [(ngModel)]="flightModel.rows" type="text">
+						
+					</div>
+                    <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; Meal</label>
+            <select id="from" name="from" class="form-control departsfrom-select" [(ngModel)]="flightModel.meal" required>
+              <option value="Veg">Veg</option>
+              <option value="NonVeg">NonVeg</option>
+              <option value="Vegan">Vegan</option>
+              <option value="None">None</option>
+      
+            </select>
+						
+					</div>
+          <div class="form-group">
+						<label for="dob">&nbsp; &nbsp; AirLine Logo</label>
+                         <input type="file"  #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none"/>
+                <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+						
+					</div>
+          
+					<br>
+                    &nbsp;&nbsp;	<button id="submit" type="submit"  class="btn btn-primary center"  (click)="Addflight()">Submit</button>  &nbsp; &nbsp; &nbsp;
+                    
+			
+
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+
 <br>
-<button class="btn btn-primary" class="nav-link" routerLink="/flight">Customer Booking Details</button>
+
+
+
+
+<button id="submit" type="submit" value="submit" class="btn btn-primary center" (click)="getData()" value="See Airlines">click here to see all available airlines</button>
+<br><br>
+
+<div class="container">
+  <div class="row" style="margin-bottom:15px;margin:10px">
+    <div class="col-md-3">
+      
+    </div>
+  </div>
+  </div>
+
+  
+<section class="intro">
+    <div class="gradient-custom-1 h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="table-responsive bg-white">
+                <table class="table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">Flight No</th>
+                      <th scope="col">Airline</th>
+                      <th scope="col">Source</th>
+                      <th scope="col">Departure</th>
+                      <th scope="col">start time</th>
+                      <th scope="col">End time</th>
+                      <th scope="col">Ticket</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let flight of flightModels">
+                    
+                        <td> {{flight.flightNo}} </td>
+                        <td> {{flight.airline}} </td>
+                        <td> {{flight.fromPlace}} </td>
+                        <td> {{flight.toPlace}} </td>
+                        <td> {{flight.startDateTime}} </td>
+                        <td> {{flight.endDateTime}} </td>
+                        <td> {{flight.ticketCost}}</td>
+
+                        <button type="button" class="btn btn-warning" value="Update" (click)="Editflight(flight)">Upadate</button>
+                        &nbsp; <button type="button" class="btn btn-warning" value="Delete" (click)="Deleteflight(flight)">Delete</button>
+                       
+                    </tr>
+                  
+                  
+                   
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- <br><br><br><br><br><br>
+<button class="btn btn-primary" class="nav-link" routerLink="/flight">Please click here to see customer booking details</button>
 <br>
 <P><B> Add New Flight</B> </P>
 <table>
@@ -141,11 +362,26 @@
   </tr>
 
   <tr>
-    <td>upload Airline logo</td>
+    <td>Upload Airline logo</td>
     <td>
 
-      <input [(ngModel)]="flightModel.logo" type="text">
-    </td>
+       <new> upupload file sathi code-->
+        <!-- <div class="container"> -->
+            <!-- <div class="row" style="margin-bottom:15px;margin:10px"> -->
+              <!-- <div class="col-md-3"> -->
+                
+                
+                <!-- <input type="file"  #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none"/>
+                <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button> -->
+             
+             
+             
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- </div> -->
+      <!-- <new> uplaoad file end -->
+      
+    <!-- </td>
   </tr>
 
   <tr>
@@ -159,8 +395,9 @@
   <input type="submit" (click)="Addflight()">
 </table><br>
   <input type="button" (click)="getData()" value="See Airlines" />
-<br><br>
-<table border="2">
+
+
+  <table border="2">
   <tr>
     <th>Airline Logo </th>
     <th>Flight No </th>
@@ -182,7 +419,7 @@
     <td> {{flight.ticketCost}}</td>
     
     <input type="button" value="Update" (click)="Editflight(flight)" />
-    <!-- <input type="button" value="Delete" (click)="Deleteflight(flight)"/>  -->
+   
 
   </tr>
-</table><br><br><br><br><br>
+</table><br><br><br><br><br>  -->

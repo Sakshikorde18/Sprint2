@@ -13,8 +13,9 @@ import { NgModule } from '@angular/core';
 export class DashboardComponent  {
   flightservice: any;
 
-  constructor(public httpc:HttpClient) {
+  constructor(public httpc:HttpClient,private http:HttpClient) {
   }
+  
 
   flightModel: flight = new flight();
   flightModels: Array<flight> = new Array<flight>();
@@ -83,6 +84,16 @@ export class DashboardComponent  {
   GetError(input:any){
     console.log(input);
   }
-  
+  uploadFile=(files: any)=>{
+    console.log("Hi");
+    
+    if(files.length==0){
+      return;
+    }
+    let filetoUpload=<File>files[0];
+    const formData=new FormData();
+    formData.append('file',filetoUpload,filetoUpload.name)
+    this.http.post("https://localhost:44325/api/upload",formData).subscribe(res=>console.log(res),res=>console.log(res));
+  }
   
 }
