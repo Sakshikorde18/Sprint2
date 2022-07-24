@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,8 +14,9 @@ import { AuthService } from './services/auth.service';
 import { FlightComponent } from './flight/flight.component';
 import { BookingComponent } from './booking/booking.component';
 import { FilterPipe } from './shared/filter.pipe';
-import { SearchComponent } from './search/search.component';
 import { PaymentComponent } from './payment/payment.component';
+import { JwtHelperService,JWT_OPTIONS } from '@auth0/angular-jwt';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,8 @@ import { PaymentComponent } from './payment/payment.component';
     FlightComponent,
     BookingComponent,
     FilterPipe,
-    SearchComponent,
-    PaymentComponent
+    PaymentComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,10 @@ import { PaymentComponent } from './payment/payment.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService],
-  bootstrap: [AppComponent]
+  providers: [AuthService,{provide:JWT_OPTIONS,useValue:JWT_OPTIONS},JwtHelperService],
+  bootstrap: [AppComponent],
+  schemas: [
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }

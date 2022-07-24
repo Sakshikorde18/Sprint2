@@ -1,5 +1,5 @@
 <br><br><br><br><br> <br><br>
-        <input type="button" (click)="getData()" value="See Booking Details"/>
+        
         <br><br>
         <section class="intro">
             <div class="gradient-custom-1 h-100">
@@ -10,6 +10,7 @@
                       <div class="table-responsive bg-white">
                         <table class="table mb-0">
                           <thead>
+                            <input type="button" (click)="getData()" value="See Booking Details"/>
     <tr>
         <td><b>PNR No</b> </td>
         <td><b>Name</b> </td>
@@ -17,8 +18,13 @@
         <td><b>Gender</b></td>
         <td><b>Age</b></td>
         <td><b>Meal</b></td>
+        <td><b>Source</b></td>
+        <td><b>Destination</b></td>
+        <td><b>Departure</b></td>
+        <td><b>Arrival</b></td>
         <td><b>Seat No</b></td>
-        <td><b>Action</b></td>
+        <td><b></b></td>
+        
         
     </tr>
     <tr *ngFor="let booking of bookingModels">
@@ -28,9 +34,13 @@
         <td> {{booking.gender}} </td>
         <td> {{booking.age}} </td>
         <td> {{booking.meal}} </td>
+        <td> {{booking.fromPlace}} </td>
+        <td> {{booking.toPlace}} </td>
+        <td> {{booking.startDateTime}} </td>
+        <td> {{booking.endDateTime}} </td>
         <td> {{booking.seatNo}} </td>
         
-        <input type="button" value="Cancel Booking" (click)="Deletebooking(booking)" />
+        <td><input type="button" value="Cancel Booking" (click)="Deletebooking(booking.id)" /></td>
     </tr>
                           </thead>
 </table>

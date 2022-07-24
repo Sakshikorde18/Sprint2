@@ -1,31 +1,34 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { flight } from '../models/flight';
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
 import { flightUrl } from '../services/Api';
 
-
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-update',
+  templateUrl: './update.component.html',
+  styleUrls: ['./update.component.css']
 })
-export class DashboardComponent  {
+export class UpdateComponent implements OnInit {
+
   flightservice: any;
-  modelText:string="";
-  modelHeader:string="";
+
   constructor(public httpc:HttpClient,private http:HttpClient) {
   }
+  ngOnInit(): void {
+  
+  }
+  
   
 
   flightModel: flight = new flight();
   flightModels: Array<flight> = new Array<flight>();
-  Addflight() {
+  Updateflight() {
     console.log(this.flightModel);
    
 
     var flightto={
+      ID:Number(this.flightModel.id), 
+
       flightNo:Number(this.flightModel.flightNo),  
       
       airline:this.flightModel.airline,
@@ -57,7 +60,7 @@ export class DashboardComponent  {
       isActive:this.flightModel.isActive,
       
     }
-    this.httpc.post(flightUrl,flightto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
+    this.httpc.put(flightUrl,flightto).subscribe(res=>this.PostSuccess(res),res=>this.PostError(res));
     this.flightModel = new flight();
     
   }
@@ -68,13 +71,13 @@ export class DashboardComponent  {
   PostError(res:any){
     console.log(res);
   }
-  Editflight(input: flight) {
-    this.flightModel = input;
-  }
-  Deleteflight(input: flight) {
-    var index=this.flightModels.indexOf(input);
-    this.flightModels.splice(index,1);
-  }
+  // Editflight(input: flight) {
+  //   this.flightModel = input;
+  // }
+  // Deleteflight(input: flight) {
+  //   var index=this.flightModels.indexOf(input);
+  //   this.flightModels.splice(index,1);
+  
   getData(){
     console.log("Hi");
     this.httpc.get(flightUrl).subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
@@ -86,6 +89,9 @@ export class DashboardComponent  {
   GetError(input:any){
     console.log(input);
   }
+  Editflight(input: flight) {
+    this.flightModel = input;
+  }
   uploadFile=(files: any)=>{
     console.log("Hi");
     
@@ -95,6 +101,8 @@ export class DashboardComponent  {
     let filetoUpload=<File>files[0];
     const formData=new FormData();
     formData.append('file',filetoUpload,filetoUpload.name)
-    this.http.post("https://localhost:44325/api/upload",formData).subscribe(res=>console.log(res),res=>console.log(res));
+    this.http.post(flightUrl,formData).subscribe(res=>console.log(res),res=>console.log(res));
   }
+   
+
 }

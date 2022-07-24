@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { booking } from '../models/booking';
+import { bookingUrl } from '../services/Api';
 
 @Component({
   selector: 'app-flight',
@@ -17,7 +18,7 @@ export class FlightComponent implements OnInit {
   bookingModels: Array<booking> = new Array<booking>();
   getData(){
     console.log("Hi");
-    this.httpc.get("https://flightbook20220718154132.azurewebsites.net/api/Booking").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
+    this.httpc.get(bookingUrl).subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
   }
   
   GetSuccess(input:any){

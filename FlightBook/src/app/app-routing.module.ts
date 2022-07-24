@@ -8,7 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PaymentComponent } from './payment/payment.component';
 import { RegisterComponent } from './register/register.component';
-import { SearchComponent } from './search/search.component';
+import { UpdateComponent } from './update/update.component';
+
 
 const routes: Routes = [ {
   path: 'home',
@@ -43,12 +44,12 @@ const routes: Routes = [ {
   component: BookingComponent
 },
 {
-  path: 'search',
-  component: SearchComponent
-},
-{
   path: 'payment',
   component: PaymentComponent
+},
+{
+  path: 'update',
+  component: UpdateComponent
 }
 ];
 

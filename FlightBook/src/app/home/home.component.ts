@@ -9,7 +9,7 @@ import { FlightService } from '../services/flight.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  trip = 'round';
   public flight : any;
   searchKey:string="";
   public searchTerm : string='';

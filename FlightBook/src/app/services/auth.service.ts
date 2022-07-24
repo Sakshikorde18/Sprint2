@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { loginUrl, registerUrl } from './Api';
 
 
 @Injectable()
 export class AuthService {
-  private _registerUrl = "https://flightbook20220718154132.azurewebsites.net/api/Login/register";
-  private _loginUrl = "https://flightbook20220718154132.azurewebsites.net/api/Login/login";
+  private _registerUrl = registerUrl;
+  private _loginUrl = loginUrl;
 
   constructor(private http: HttpClient,private _router:Router) { }
 

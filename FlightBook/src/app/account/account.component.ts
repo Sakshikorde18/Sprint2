@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { booking } from '../models/booking';
+import { bookingUrl } from '../services/Api';
 
 @Component({
   selector: 'app-account',
@@ -14,7 +15,7 @@ export class AccountComponent  {
   bookingModels: Array<booking> = new Array<booking>();
   getData(){
     console.log("Hi");
-    this.httpc.get("https://flightbook20220718154132.azurewebsites.net/api/booking").subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
+    this.httpc.get(bookingUrl).subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
   }
   
   GetSuccess(input:any){
@@ -26,9 +27,11 @@ export class AccountComponent  {
   Editbooking(input: booking) {
     this.bookingModel = input;
   }
-  Deletebooking(input: booking) {
-    var index=this.bookingModels.indexOf(input);
-    this.bookingModels.splice(index,1);
+  Deletebooking(id: Number) {
+    // var index=this.bookingModels.indexOf(input);
+    // this.bookingModels.splice(index,1);
+    this.httpc.delete(bookingUrl+"?Id="+id).subscribe(res=>this.GetSuccess(res),res=>this.GetError(res));
+
   }
 
 }

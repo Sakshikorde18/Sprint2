@@ -1,99 +1,224 @@
-<br><br><br><br><br><br><div class="py-5">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <div class="card rounded-0">
-                <div class="Card-header">
-                    <h3 class="mb-0">Please complete the form (*)
+ <br><br><br><br><br><br>
+<div class="py-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="Card-header">
+          <h3 class="mb-0">Please complete the form
 
-                    </h3>
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="form">
+            <div class="col-md-12">
+              <table>
+                <tr>
+                  <td>Full Name</td>
+                  <td>
+                    <input [(ngModel)]="bookingModel.name" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Email ID</td>
+                  <td>
+                    <input [(ngModel)]="bookingModel.email" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td>
+
+                    <select id="from" name="from" class="form-control departsfrom-select"
+                      [(ngModel)]="bookingModel.gender" required>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+
+
+                    </select>
+
+
+
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Age</td>
+                  <td>
+                    <input [(ngModel)]="bookingModel.age" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Meal</td>
+                  <td>
+
+                    <select id="from" name="from" class="form-control departsfrom-select"
+                      [(ngModel)]="bookingModel.meal" required>
+                      <option value="Veg">Veg</option>
+                      <option value="NonVeg">NonVeg</option>
+                      <option value="Vegan">Vegan</option>
+                      <option value="None">None</option>
+
+                    </select>
+
+
+
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Source</td>
+                  <td>
+                    <input [(ngModel)]="bookingModel.fromPlace" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Destination</td>
+                  <td>
+                    <input [(ngModel)]="bookingModel.toPlace" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Departure</td>
+                  <td>
+                    <input [(ngModel)]="bookingModel.startDateTime" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Arrival</td>
+                  <td>
+                    <input [(ngModel)]="bookingModel.endDateTime" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td>No. of Seats</td>
+                  <td>
+                    <input [(ngModel)]="bookingModel.seatNo" type="text">
+                  </td>
+                </tr>
+                <input type="submit" (click)="Addbooking()" class="btn btn-primary"><br>
+                <button routerLink="/payment" class="btn btn-primary float-right mt-5">Pay Now</button>
+
+
+
+
+              </table>
+            </div>
+          </div> 
+
+
+<!-- <div class="py-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="Card-header">
+          <h3 class="mb-0">Please complete the form
+
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="form">
+            <div class="col-md-12">
+
+             <tr>
+                   <td>Full Name</td> 
+                    <input type="email" name="name" id="name" [(ngModel)]="bookingModel.name" required />
+              </tr>  
+                <tr>
+                    <td>Email ID</td>
+                        <input type="email" name="email" id="email" [(ngModel)]="bookingModel.email" required />
+                      </tr> 
+                      
+              <tr>
+                <td>Gender</td>
+                <td>
+
+                  <select id="from" name="from" class="form-control departsfrom-select"
+                    [(ngModel)]="bookingModel.gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+               </select></td>
+              </tr>
+              <tr>
+                
+              <td>Age</td> 
+                  <input type="age" name="age" id="age" [(ngModel)]="bookingModel.age" required />
+              
+              </tr>
+              <tr>
+                <td>Meal</td>
+                <td>
+
+                  <select id="from" name="from" class="form-control departsfrom-select"
+                    [(ngModel)]="bookingModel.meal" required>
+                    <option value="Veg">Veg</option>
+                    <option value="NonVeg">NonVeg</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="None">None</option>
+
+                  </select> </td>
+              </tr>
+              <tr>
+                <td>Source</td>
+                <td>
+                  <input [(ngModel)]="bookingModel.fromPlace" type="text"required>
+                </td>
+              </tr>
+              <tr>
+                <td>Destination</td>
+                <td>
+                  <input [(ngModel)]="bookingModel.toPlace" type="text"required>
+                </td>
+              </tr>
+              <tr>
+                <td>Departure</td>
+                <td>
+                  <input [(ngModel)]="bookingModel.startDateTime" type="text"required>
+                </td>
+              </tr>
+              <tr>
+                <td>Arrival</td>
+                <td>
+                  <input [(ngModel)]="bookingModel.endDateTime" type="text"required>
+                </td>
+              </tr>
+              <tr>
+                <td>No. of Seats</td>
+                <td>
+                  <input [(ngModel)]="bookingModel.seatNo" type="text"required>
+                </td>
+              </tr>
+
+
+
+              <input type="submit" value="Booking" class="submit-btn" (click)="Booking()" />
+             
+              <button routerLink="/payment" class="btn btn-primary float-right mt-5">Pay Now</button>
+
+
+              <div *ngIf="showSpinner" id="cover-spin">
                 </div>
-                <div class="card-body">
-                    <div class="form">
-                        <div class="col-md-12">
-
-
-    <table>
-      <tr>
-          <td>Full Name</td>
-          <td>
-              <input [(ngModel)]="bookingModel.name" type="text">
-          </td>
-      </tr>
-      <tr>
-          <td>Email ID</td>
-          <td>
-              <input [(ngModel)]="bookingModel.email" type="text">
-          </td>
-      </tr>
-      <tr>
-        <td>Gender</td>
-        <td>
-          
-            <select
-            id="from"
-            name="from"
-            class="form-control departsfrom-select"
-            [(ngModel)]="bookingModel.gender"
-            required
-          >
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-            
-            
-          </select>
-    
-
-        
-         
-        </td>
-      </tr>
-      <tr>
-        <td>Age</td>
-        <td>
-            <input [(ngModel)]="bookingModel.age" type="text">
-        </td>
-    </tr> 
-      <tr>
-        <td>Meal</td>
-        <td>
-          
-            <select
-            id="from"
-            name="from"
-            class="form-control departsfrom-select"
-            [(ngModel)]="bookingModel.meal"
-            required
-          >
-            <option value="Veg">Veg</option>
-            <option value="NonVeg">NonVeg</option>
-            <option value="Vegan">Vegan</option>
-            <option value="None">None</option>
-            
-          </select>
-    
-
-        
-         
-        </td>
-      </tr>
-      <tr>
-      <td>No. of Seats</td>
-      <td>
-          <input [(ngModel)]="bookingModel.seatNo" type="text">
-      </td>
-  </tr> 
-      <input type="submit" (click)="Addbooking()"class="btn btn-primary"><br>
-      <td><button routerLink="/payment" class="btn btn-primary float-right mt-5">Pay Now</button></td>
-      
-
-      
-  
-    </table>
-  
-  
-</div>
-</div>
-</div>
-</div>
-</div>
+              <button type="button" id="btnLaunchModel" class="btn btn-primary"  style="visibility: hidden;"data-toggle="modal" data-target="#exampleModalCenter">
+                
+              </button>
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">{{modelHeader}}</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      {{modelText}}
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div> -->
+ 

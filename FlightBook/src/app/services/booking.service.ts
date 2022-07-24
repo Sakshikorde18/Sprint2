@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { bookingUrl } from './Api';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ export class BookingService {
 
 
 
-    private _bookingtUrl = "https://flightbook20220718154132.azurewebsites.net/api/Booking";
+    private _bookingtUrl = bookingUrl;
     constructor(private http: HttpClient, private _router: Router) { }
 
 
@@ -20,5 +21,8 @@ export class BookingService {
     DeleteBookings(id:any) {
         return this.http.delete<any>(this._bookingtUrl,id);
     }
+    Booking(user: any) {
+        return this.http.post<any>(this._bookingtUrl, user);
+      }
 
 }
